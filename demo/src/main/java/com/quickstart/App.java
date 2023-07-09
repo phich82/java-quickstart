@@ -68,6 +68,12 @@ public class App
         //     s = s.replaceAll(orig, rep);
         // }
 
+        ShellProcessor.exec();
+        //SecurityKeyPairGenerator.generate();
+        String encrypted = Crypter.encryptRSA("testing");
+        System.out.println("encrypted => " + encrypted);
+        System.out.println("decrypted => " + Crypter.decryptRSA(encrypted));
+
         //String f = s.replaceAll("(\"password\"\\:(.*)\\,)", "\"password\":\"*****\",");
         String f = s.replace("(\"password\"\\:(.*)\\,$)", "-------:-------")
         .replace("(\"password\"\\:(.*)\\}$)", "========:-------")
